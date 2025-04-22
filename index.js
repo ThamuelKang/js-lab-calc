@@ -1,13 +1,21 @@
-//initializing empty array
+//Initializing empty array
 const calculationHistory = []
 
+//A global function: Checking if an array is empty
+function checkArray(arr) {
+    if (arr.length === 0) {
+        console.log('You have not calculated anything!')
+    } else {
+        console.log(arr)
+    }
+}
 
 //A global function: Creates an object and pushes it into the calcuationHistoryArray
 function createObject(operation, operand, output) {
     const newObject = {
-        operation: operation,
-        operand: operand,
-        output: output
+        operation,
+        operand,
+        output
     }
     calculationHistory.push(newObject)
 }
@@ -24,17 +32,17 @@ function isANumber(value) {
 
 function add(num1, num2) {
     const output = num1 + num2
-    console.log(output)
+    createObject('addition', [num1, num2], output)
 }
 
 function subtract(num1, num2) {
     const output = num1 - num2
-    console.log(output)
+    createObject('subtraction', [num1, num2], output)
 }
 
 function multiply(num1, num2) {
     const output = num1 * num2
-    console.log(output)
+    createObject('multiplification', [num1, num2], output)
 }
 
 function divide(num, den) {
@@ -45,6 +53,7 @@ function divide(num, den) {
 // add(10, 2)
 // subtract(10, 2)
 // multiply(10, 2)
-divide(10, 2)
+// divide(10, 2)
 
-console.log(calculationHistory)
+
+checkArray(calculationHistory)
