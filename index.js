@@ -1,5 +1,16 @@
+//initializing empty array
 const calculationHistory = []
 
+
+//A global function: Creates an object and pushes it into the calcuationHistoryArray
+function createObject(operation, operand, output) {
+    const newObject = {
+        operation: operation,
+        operand: operand,
+        output: output
+    }
+    calculationHistory.push(newObject)
+}
 
 // if (typeof output === 'number' && !isNaN(output)) {
 //     console.log(output)
@@ -28,13 +39,7 @@ function multiply(num1, num2) {
 
 function divide(num, den) {
     const output = num / den
-
-    const newObject = {
-        operations: 'division',
-        operands: [num, den],
-        output: output
-    }
-    calculationHistory.push(newObject)
+    createObject('division', [num, den], output)
 }
 
 // add(10, 2)
