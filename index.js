@@ -1,7 +1,7 @@
 //Initializing empty array
 const calculationHistory = []
 
-//A global function: Checking if an array is empty
+//A global function: Checking if an array is empty or prints if not empty
 function checkArray(arr) {
     if (arr.length === 0) {
         console.log('You have not calculated anything!')
@@ -20,7 +20,7 @@ function createObject(operation, operand, output) {
     calculationHistory.push(newObject)
 }
 
-//A global function: Checks if its a number or NaN
+//A global function: Checks if its NOT a number or NaN
 function checkNumber(output) {
     if (typeof output !== 'number' || isNaN(output)) {
         return output = 'Invalid results'
